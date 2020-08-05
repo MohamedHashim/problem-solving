@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp graph/adjency_list.cpp)
+add_executable(untitled main.cpp graph/adjency_list.cpp graph/adjency_matrix.cpp)

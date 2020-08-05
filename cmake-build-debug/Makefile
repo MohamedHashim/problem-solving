@@ -151,6 +151,33 @@ graph\adjency_list.cpp.s:
 	$(MAKE) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\graph\adjency_list.cpp.s
 .PHONY : graph\adjency_list.cpp.s
 
+graph\adjency_matrix.obj: graph\adjency_matrix.cpp.obj
+
+.PHONY : graph\adjency_matrix.obj
+
+# target to build an object file
+graph\adjency_matrix.cpp.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\graph\adjency_matrix.cpp.obj
+.PHONY : graph\adjency_matrix.cpp.obj
+
+graph\adjency_matrix.i: graph\adjency_matrix.cpp.i
+
+.PHONY : graph\adjency_matrix.i
+
+# target to preprocess a source file
+graph\adjency_matrix.cpp.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\graph\adjency_matrix.cpp.i
+.PHONY : graph\adjency_matrix.cpp.i
+
+graph\adjency_matrix.s: graph\adjency_matrix.cpp.s
+
+.PHONY : graph\adjency_matrix.s
+
+# target to generate assembly for a file
+graph\adjency_matrix.cpp.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\graph\adjency_matrix.cpp.s
+.PHONY : graph\adjency_matrix.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -190,6 +217,9 @@ help:
 	@echo ... graph/adjency_list.obj
 	@echo ... graph/adjency_list.i
 	@echo ... graph/adjency_list.s
+	@echo ... graph/adjency_matrix.obj
+	@echo ... graph/adjency_matrix.i
+	@echo ... graph/adjency_matrix.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

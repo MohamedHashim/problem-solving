@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/untitled.dir/graph/adjency_list.cpp.obj"
+  "CMakeFiles/untitled.dir/graph/adjency_matrix.cpp.obj"
   "CMakeFiles/untitled.dir/main.cpp.obj"
   "untitled.exe"
   "untitled.exe.manifest"
