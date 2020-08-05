@@ -124,6 +124,33 @@ untitled\fast:
 	$(MAKE) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\build
 .PHONY : untitled\fast
 
+graph\adjency_list.obj: graph\adjency_list.cpp.obj
+
+.PHONY : graph\adjency_list.obj
+
+# target to build an object file
+graph\adjency_list.cpp.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\graph\adjency_list.cpp.obj
+.PHONY : graph\adjency_list.cpp.obj
+
+graph\adjency_list.i: graph\adjency_list.cpp.i
+
+.PHONY : graph\adjency_list.i
+
+# target to preprocess a source file
+graph\adjency_list.cpp.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\graph\adjency_list.cpp.i
+.PHONY : graph\adjency_list.cpp.i
+
+graph\adjency_list.s: graph\adjency_list.cpp.s
+
+.PHONY : graph\adjency_list.s
+
+# target to generate assembly for a file
+graph\adjency_list.cpp.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\graph\adjency_list.cpp.s
+.PHONY : graph\adjency_list.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -160,6 +187,9 @@ help:
 	@echo ... edit_cache
 	@echo ... untitled
 	@echo ... rebuild_cache
+	@echo ... graph/adjency_list.obj
+	@echo ... graph/adjency_list.i
+	@echo ... graph/adjency_list.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
