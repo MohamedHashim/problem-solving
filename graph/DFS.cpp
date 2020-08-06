@@ -1,9 +1,6 @@
 //
 // Created by Mohamed Hashim on 8/6/2020.
 //
-// DFS
-//PT07Y - Is it a tree
-//https://www.spoj.com/problems/PT07Y/
 
 #include"bits/stdc++.h"
 #include<iostream>

@@ -15,7 +15,7 @@ void DFS(int u) {
             DFS(v);
     }
 }
-
+// check if the graph if connected or not
 bool singleComponent() {
     int root = 1;
     DFS(root);
@@ -31,6 +31,15 @@ int main() {
     FILE *stream;
     freopen_s(&stream, "..//input.in", "r", stdin);
 #endif
-
+    int u, v;
+    cin >> n >> m;
+    // building the graph
+    for (int i = 0; i < m; ++i) {
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    // check if this graph is tree or not
+    cout << (m == (n - 1) && singleComponent() ? "YES" : "NO") << endl;
     return 0;
 }
