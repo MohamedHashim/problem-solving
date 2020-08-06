@@ -1,3 +1,7 @@
+//
+// Created by Mohamed Hashim on 8/6/2020.
+//
+
 #include"bits/stdc++.h"
 #include<iostream>
 
@@ -31,6 +35,13 @@ int main() {
     FILE *stream;
     freopen_s(&stream, "..//input.in", "r", stdin);
 #endif
-
+    int u, v;
+    cin >> n >> m;
+    for (int i = 0; i < m; ++i) {
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    cout << (m == (n - 1) && singleComponent() ? "YES" : "NO") << endl;
     return 0;
 }
