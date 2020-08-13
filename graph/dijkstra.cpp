@@ -1,35 +1,38 @@
 //
 // Created by Mohamed Hashim on 8/12/2020.
 //
+#include"bits/stdc++.h"
 #include<iostream>
-#include"../bits/stdc++.h"
-
-#define endl '\n'
 
 using namespace std;
-typedef long long ll;
-const int N = 1e5 + 7, M = 2 * N;
-
+const int N = 10e5 + 7;
+// for each node save ( cost , toNode)
 vector <pair<int, int>> adj[N];
-
-int t, n, m;
-string s, g;
-
+//save shortest distance of each node from the source
 int dis[N];
+int n;  //number of nodes
 
+// dijkstra goal is set the shortest path to each node from the source in weighted graph
 void dijkstra(int src) {
-    priority_queue <pair<int, int>> q;
-    memset(dis, '?', n * sizeof dis[0]);
-    dis[src] = 0;
-    q.push({0, src});
-    while (!q.empty()) {
-        int u = q.top().second;
-        int d = -q.top().first;
-        q.pop();
-        if (d != dis[u]) continue;
-        for (auto e : adj[u]) {
-            int v = e.first, c = e.second;
+    priority_queue <pair<int, int>> q;   // cost and node in priority queue to sort nodes instantly
+    memset(dis, '?',n * sizeof dis[0]);    // fill all distance array with infinity because char '?' =(0x3f) in 4 bytes > 1e9
 
+    dis[src] = 0;   //set first distance of source with 0
+    q.push({0, src});
+
+    while (!q.empty()) {
+        //pop first item
+        int d = -q.top().first;
+        int u = q.top().second;
+        q.pop();
+
+        //compare the distance value in priority queue and distance array if diff continue because the value in distance array is already updated and has smaller value
+        if (d != dis[u])continue;
+        // loop on neighbours
+        for (auto e :adj[u]) {
+            int c = e.first;
+            int v = e.second;
+            //relaxation, check if the new distance is shorter than it's saved value or not
             int nd = dis[u] + c;
             if (nd < dis[v]) {
                 dis[v] = nd;
@@ -39,48 +42,22 @@ void dijkstra(int src) {
     }
 }
 
-/*
-s [the number of tests <= 10]
-n [the number of cities <= 10000]
-NAME [city name]
-p [the number of neighbours of city NAME]
-nr cost [nr - index of a city connected to NAME (the index of the first city is 1)]
-           [cost - the transportation cost]
-r [the number of paths to find <= 100]
-NAME1 NAME2 [NAME1 - source, NAME2 - destination]
-[empty line separating the tests]
-
- */
-
-map<string, int> nameToIdx;
-
 int main() {
-    ios_base::sync_with_stdio(0), cin.tie(0);
-#ifdef CLION
-    freopen("in", "rt", stdin);
+#ifndef ONLINE_JUDGE
+    FILE *stream;
+    freopen_s(&stream, "..//input.in", "r", stdin);
 #endif
-    cin >> t;
-    while (t--) {
-        nameToIdx.clear();
-        cin >> n;
-        for (int i = 0; i < n; ++i) {
-            adj[i].clear();
-            cin >> s >> m;
-            nameToIdx[s] = i;
-            while (m--) {
-                int v, cst;
-                cin >> v >> cst;
-                adj[i].emplace_back(--v, cst);
-            }
-        }
-        int r;
-        cin >> r;
-        while (r--) {
-            cin >> s >> g;
-            int u = nameToIdx[s], v = nameToIdx[g];
-            dijkstra(u);
-            cout << dis[v] << endl;
-        }
-    }
 
+    int m, u, v, w;
+    cin >> n >> m;
+    for (int i = 0; i < m; ++i) {
+        cin >> u >> v >> w;
+        u--, v--;
+        adj[u].emplace_back(w, v);
+    }
+    dijkstra(0);
+    for (int i = 0; i < n; ++i) {
+        cout << i + 1 << " : " << dis[i] << endl;
+    }
+    return 0;
 }
