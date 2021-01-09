@@ -16,7 +16,7 @@ int main() {
     for (int i = 1; i <= w; i++) {
         cost += i * k;
     }
-    if (cost != n)
+    if (n<cost)
         cout << abs(cost - n) << endl;
     else
         cout << 0 << endl;
